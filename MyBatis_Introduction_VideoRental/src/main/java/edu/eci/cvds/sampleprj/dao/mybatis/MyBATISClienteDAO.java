@@ -1,6 +1,5 @@
 package edu.eci.cvds.sampleprj.dao.mybatis;
 
-<<<<<<< HEAD
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import edu.eci.cvds.sampleprj.dao.ItemDAO;
@@ -40,8 +39,3 @@ public class MyBATISCliente implements ItemDAO{
   }
 
   }
-=======
-public class MyBATISClienteDAO {
-    
-}
->>>>>>> a24d824de1c087a24663f2d239fe40aa0ce9b784
