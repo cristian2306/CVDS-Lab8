@@ -8,11 +8,13 @@ import edu.eci.cvds.samples.entities.Cliente;
 
 /**
  *
- * @author 2106913
+ * @author 2167892
  */
 public interface ClienteMapper {
     
-    public Cliente consultarCliente(@Param("idcli") int id); 
+    public Cliente consultarCliente(@Param("idcli") int id);
+    
+
     
     /**
      * Registrar un nuevo item rentado asociado al cliente identificado
@@ -25,12 +27,18 @@ public interface ClienteMapper {
     public void agregarItemRentadoACliente(@Param("idic") int idic, 
             @Param("idi") int idi, 
             @Param("fechainicio") Date fechainicio,
-            @Param("fechafin") Date fechafin);
+            @Param("fechafin") Date fechafin );
 
     /**
      * Consultar todos los clientes
      * @return 
      */
     public List<Cliente> consultarClientes();
+
+    /**
+     * Insertar un cliente a la base de datos
+     * @param cliente
+     */
+    public void insertarCliente(@Param("cliente") Cliente cliente);
 
 }
