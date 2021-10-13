@@ -11,7 +11,7 @@ import edu.eci.cvds.samples.entities.Item;
  *
  * @author 2106913
  */
-public interface ItemMapper {
+public interface ItemMapper{
     
     
     public List<Item> consultarItems();        
@@ -20,8 +20,5 @@ public interface ItemMapper {
             @Param("IdentiItem") int id);
     
     public void insertarItem(
-            @Param("item") Item it);
-    
-
-        
+            @Param("item") Item it);        
 }

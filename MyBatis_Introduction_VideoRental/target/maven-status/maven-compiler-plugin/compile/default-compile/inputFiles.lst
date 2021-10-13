@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\jdbc\example\JDBCExample.java
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\ItemMapper.java
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISTipoItemDAO.java
@@ -23,3 +24,30 @@ C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Univer
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\entities\Cliente.java
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerImpl.java
 C:\Users\crisa\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Universidad\7mo Semestre\CVDS\Laboratorios\Lab8\master\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerItemsImpl.java
+=======
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISItemRentadoDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\entities\TipoItem.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\entities\Cliente.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerItemsImpl.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\TipoItemDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\ItemMapper.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerItemsStub.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\ItemRentadoMapper.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\ServiciosAlquiler.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\ServiciosAlquilerFactory.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\ItemRentadoDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISItemDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\ExcepcionServiciosAlquiler.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerImpl.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\ItemDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\entities\Item.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISTipoItemDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISClienteDAO.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\ClienteMapper.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\services\client\MyBatisExample.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\samples\entities\ItemRentado.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\TipoItemMapper.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\PersistenceException.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\jdbc\example\JDBCExample.java
+C:\Users\diego\OneDrive\Escritorio\UNIVERSIDAD\CVDS\CVDS-Lab8\MyBatis_Introduction_VideoRental\src\main\java\edu\eci\cvds\sampleprj\dao\ClienteDAO.java
+>>>>>>> ce7f413759a7f031df1fb8d906b21dcd0ffe4104

@@ -29,7 +29,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.session.*;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
-import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+//import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 
 /**
  *
@@ -68,7 +68,7 @@ public class MyBatisExample {
         SqlSession sqlss = sessionfact.openSession();
 
         ClienteMapper cm= (ClienteMapper)sqlss.getMapper(ClienteMapper.class);
-        ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
+        //ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
 
         System.out.println("-----------------Consultar Clientes----------------");
        // System.out.println(cm.consultarClientes());
