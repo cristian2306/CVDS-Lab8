@@ -9,22 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-
-<<<<<<< HEAD
         <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
-=======
-            <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
->>>>>>> 595048eee059aa0a23723c3a611438dbb49d5440
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>4.2.2</version>
         </dependency>
-<<<<<<< HEAD
         
-=======
-
->>>>>>> 595048eee059aa0a23723c3a611438dbb49d5440
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-guice</artifactId>
@@ -37,11 +28,13 @@
             <version>4.11</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.4.5</version>
+            <version>3.5.6</version>
         </dependency>
+
 
         <dependency>
             <groupId>mysql</groupId>

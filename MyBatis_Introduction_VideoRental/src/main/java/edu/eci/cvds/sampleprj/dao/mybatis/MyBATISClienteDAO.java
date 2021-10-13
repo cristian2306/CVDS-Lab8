@@ -7,7 +7,6 @@ import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
-import edu.eci.cvds.samples.entities.TipoItem;
 import java.sql.SQLException;
 
 public class MyBATISClienteDAO implements ClienteDAO{
@@ -18,10 +17,10 @@ public class MyBATISClienteDAO implements ClienteDAO{
   @Override
   public void save(Cliente cliente) throws PersistenceException{
   try{
-      ClienteMapper.insertarCliente(cliente);
+      clienteMapper.insertarCliente(cliente);
   }
   catch(org.apache.ibatis.exceptions.PersistenceException e){
-      throw new PersistenceException("Error al registrar el cliente"+it.toString(),e);
+      throw new PersistenceException("Error al registrar el cliente"+cliente.toString(),e);
   }        
 
   }

@@ -8,11 +8,12 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
+import edu.eci.cvds.sampleprj.dao.*;
 import java.sql.SQLException;
 
-public class MyBATISTipoItemDAO {
+public class MyBATISTipoItemDAO implements TipoItemDAO{
     
-    @Inject
+  @Inject
   private TipoItemMapper tipoMapper;
 
   @Override
@@ -21,20 +22,18 @@ public class MyBATISTipoItemDAO {
     tipoMapper.addTipoItem(descripcion);
   }
   catch(org.apache.ibatis.exceptions.PersistenceException e){
-      throw new PersistenceException("Error al registrar el tipo de item "+it.toString(),e);
+      throw new PersistenceException("Error al registrar el tipo de item "+tipoMapper.toString(),e);
   }        
   }
 
   @Override
-  public Item load(int id) throws PersistenceException {
+  public TipoItem load(int id) throws PersistenceException {
   try{
       return tipoMapper.getTipoItem(id);
   }
   catch(org.apache.ibatis.exceptions.PersistenceException e){
       throw new PersistenceException("Error al consultar el tipo de item "+id,e);
   }
-
-
   }
 
 
