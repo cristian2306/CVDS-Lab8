@@ -47,7 +47,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        try{
           return clienteDAO.load(docu);
        }catch (PersistenceException ex){
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new ExcepcionServiciosAlquiler("Error al consultar el cliente"+docu,ex);
        }
    }
 
@@ -56,13 +56,17 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
         try{
             return iRentadoDAO.consultarItemsCliente(idCliente);
         }catch(PersistenceException e){
-            throw new UnsupportedOperationException("Not supported yet.");
+            throw new ExcepcionServiciosAlquiler("Error al consultar los items del cliente "+idCliente);
         }
    }
 
    @Override
    public List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+           return clienteDAO.consultarClientes();
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Erro al consultar los clientes",e);
+        }
    }
 
    @Override
@@ -75,8 +79,12 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
 
    @Override
-   public List<Item> consultarItemsDisponibles() {
-       throw new UnsupportedOperationException("Not supported yet.");
+   public List<Item> consultarItemsDisponibles() throws ExcepcionServiciosAlquiler{
+       try{
+            return itemDAO.consultarItems();
+       }catch(PersistenceException e){
+        throw new ExcepcionServiciosAlquiler("Error al consulatr los items disponibles",e);
+       }
    }
 
    @Override
@@ -86,12 +94,20 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+           return tItemDAO.load(id);
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al consultar el tipo Item "+id,e);
+       }
    }
 
    @Override
    public List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+           return tItemDAO.consultarTiposItem();
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al consultar los tipos de item",e);
+       }
    }
 
    @Override

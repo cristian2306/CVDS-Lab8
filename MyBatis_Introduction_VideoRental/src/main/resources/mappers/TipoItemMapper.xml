@@ -5,12 +5,25 @@
   
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper">
 
-  <select parameterType="map" id="consultarTipoItem" resultMap="TipoItemResult">
+  <select parameterType="map" id="getTiposItems" resultMap="TipoItemResult">
     SELECT 
     ti.id as idTipoItem,
     ti.descripcion as descripcionTipoItem
     FROM VI_TIPOITEM
   </select>
+
+  <select parameterType="map" id="getTipoItem" resultMap="TipoItemResult">
+    SELECT 
+    ti.id as idTipoItem,
+    ti.descripcion as descripcionTipoItem
+    FROM VI_TIPOITEM
+    WHERE #{identiTipo} = ti.id;
+  </select>
+
+  <insert id="addTipoItem" parameterType="map">
+    INSERT INTO VI_TIPOITEM (id, descripcion)
+    VALUES (#{tipo.id},#{tipo.descripcion});
+  </insert>
 
   <resultMap type="TipoItem" id="TipoItemResult">
     <id property="idTipoItem" column="idTIpoItem"/>
