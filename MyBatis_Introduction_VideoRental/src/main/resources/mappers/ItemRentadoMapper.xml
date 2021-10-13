@@ -5,7 +5,7 @@
   
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper">
 
-  <select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
+  <select parameterType="map" id="consultarClientes" resultMap="ItemRentadoResult">
 	SELECT 
     ir.id as id,
     ir.CLIENTES_documento as cliente,
@@ -13,6 +13,13 @@
     ir.fechainiciorenta as fechainiciorenta,
     ir.fechafinrenta as fechafinrenta
     FROM VI_ITEMRENTADO
+  </select>
+  
+  <select parameterType="map" id="consultarRetraso" resultMap="ItemRentadoResult">
+  SELECT current_date - ir.fechafinrenta
+  FROM VI_ITEMRENTADO
+  LEFT JOIN VI_CLIENTES as c on c.documento=ir.CLIENTES_documento
+  WHERE #{identificador} = c.documento;
   </select>
 
   <resultMap type="ItempRentado" id="ItemRentadoResult">

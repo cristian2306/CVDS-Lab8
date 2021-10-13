@@ -17,6 +17,8 @@ import java.util.List;
 
 public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
 
+    private static final int MULTA_DIARIA=5000;
+
   @Inject
   private ItemRentadoMapper iRentadoMapper;  
 
@@ -48,6 +50,15 @@ public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar los items del cliente "+idCliente);
         }
+  }
+
+  @Override
+  public int consultarRetraso(int id) throws PersistenceException{
+    try{
+        return MULTA_DIARIA *iRentadoMapper.consultarRetraso(id);
+    }catch(org.apache.ibatis.exceptions.PersistenceException e){
+        throw new PersistenceException("Error al consultar la tarifa de multa");
+    }
   }
 
 

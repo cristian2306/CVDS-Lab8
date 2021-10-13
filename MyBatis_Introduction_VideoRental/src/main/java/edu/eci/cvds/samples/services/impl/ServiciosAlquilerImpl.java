@@ -28,9 +28,18 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Inject
    private TipoItemDAO tItemDAO;
 
+   private static final int MULTA_DIARIA=5000;
+
    @Override
    public int valorMultaRetrasoxDia(int itemId) {
-       throw new UnsupportedOperationException("Not supported yet.");
+       //mandar los dias de retraso y multiplicarlos por la multa diaria
+       //se tiene los dias de retraso a partir de itemRentado donde está
+       //la fecha de terminacion de la renta
+       try{
+           return MULTA_DIARIA *iRentadoDAO.consultarRetraso(itemId);
+       } catch (PersistenceException ex){
+           throw new UnsupportedOperationException("Not supported yet.");
+       }
    }
 
    @Override

@@ -8,10 +8,10 @@ import java.sql.Date;
 import java.util.List;
 
 public interface ServiciosAlquiler {
-   //de Diego
+   
    public abstract int valorMultaRetrasoxDia(int itemId);
 
-   //ya está
+   
    public abstract Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler;
 
    /**
@@ -21,20 +21,20 @@ public interface ServiciosAlquiler {
    * identificado con 'idcliente'
    * @throws ExcepcionServiciosAlquiler si el cliente no esta registrado
    */
-   //cristian
+   
    public abstract List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler;
 
-   //ya esta
+   
    public abstract List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler;
 
-   //ya esta
+   
    public abstract Item consultarItem(int id) throws ExcepcionServiciosAlquiler;
 
    /**
    * @obj consultar los items que estan disponibles para alquiler
    * @return el listado de items disponibles
    */
-  //ya esta
+  
    public abstract List<Item> consultarItemsDisponibles();
 
    /**
