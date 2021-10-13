@@ -23,7 +23,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemDAO itemDAO;
    @Inject
    private ClienteDAO clienteDAO;
-   @Injetc
+   @Inject
    private ItemRentadoDAO iRentadoDAO;
    @Inject
    private TipoItemDAO tItemDAO;
@@ -36,8 +36,8 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Override
    public Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler {
        try{
-          return clienteDAO.load(id);
-       }catch (PersistanceException ex){
+          return clienteDAO.load(docu);
+       }catch (PersistenceException ex){
         throw new UnsupportedOperationException("Not supported yet.");
        }
    }

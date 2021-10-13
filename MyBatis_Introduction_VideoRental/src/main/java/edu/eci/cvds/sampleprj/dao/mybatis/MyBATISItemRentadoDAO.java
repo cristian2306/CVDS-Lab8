@@ -3,15 +3,19 @@ package edu.eci.cvds.sampleprj.dao.mybatis;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import edu.eci.cvds.sampleprj.dao.ItemDAO;
+import edu.eci.cvds.sampleprj.dao.ItemRentadoDAO;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
+import edu.eci.cvds.samples.entities.ItemRentado;
 import java.sql.SQLException;
+import java.util.List;
 
-public class MyBATISItemRentadoDAO implements ItemDAO{
+
+public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
 
   @Inject
   private ItemRentadoMapper iRentadoMapper;  
@@ -19,7 +23,7 @@ public class MyBATISItemRentadoDAO implements ItemDAO{
   @Override
   public void save(ItemRentado tItem) throws PersistenceException{
   try{
-      iRentadoMapper.insertItemRentado(tItem);
+      iRentadoMapper.insertarItemRentado(tItem);
   }
   catch(org.apache.ibatis.exceptions.PersistenceException e){
       throw new PersistenceException("Error al registrar el tipo de item "+ tItem.toString(),e);
@@ -28,7 +32,7 @@ public class MyBATISItemRentadoDAO implements ItemDAO{
   }
 
   @Override
-  public TipoItem load(int id) throws PersistenceException {
+  public ItemRentado load(int id) throws PersistenceException {
         try{
             return iRentadoMapper.consultarItemRentado(id);
         }
