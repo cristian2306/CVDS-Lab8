@@ -12,7 +12,7 @@ import edu.eci.cvds.samples.entities.Cliente;
  */
 public interface ClienteMapper {
     
-    public Cliente consultarCliente(@Param("idcli") int id);
+    public Cliente consultarCliente(@Param("idcli") long id);
     
 
     
@@ -24,7 +24,7 @@ public interface ClienteMapper {
      * @param fechainicio
      * @param fechafin 
      */
-    public void agregarItemRentadoACliente(@Param("idic") int idic, 
+    public void agregarItemRentadoACliente(@Param("idic") long idic, 
             @Param("idi") int idi, 
             @Param("fechainicio") Date fechainicio,
             @Param("fechafin") Date fechafin );
