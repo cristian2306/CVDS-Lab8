@@ -8,9 +8,10 @@ import java.sql.Date;
 import java.util.List;
 
 public interface ServiciosAlquiler {
-
+   //de Diego
    public abstract int valorMultaRetrasoxDia(int itemId);
 
+   //ya está
    public abstract Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler;
 
    /**
@@ -20,16 +21,20 @@ public interface ServiciosAlquiler {
    * identificado con 'idcliente'
    * @throws ExcepcionServiciosAlquiler si el cliente no esta registrado
    */
+   //cristian
    public abstract List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler;
 
+   //ya esta
    public abstract List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler;
 
+   //ya esta
    public abstract Item consultarItem(int id) throws ExcepcionServiciosAlquiler;
 
    /**
    * @obj consultar los items que estan disponibles para alquiler
    * @return el listado de items disponibles
    */
+  //ya esta
    public abstract List<Item> consultarItemsDisponibles();
 
    /**
@@ -42,10 +47,13 @@ public interface ServiciosAlquiler {
    * @throws ExcepcionServiciosAlquiler si el item no existe o no esta
    * actualmente alquilado
    */
+  //diego
    public abstract long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler;
 
+   //cristian
    public abstract TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler;
 
+   //cristian
    public abstract List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler;
 
    /**
@@ -60,8 +68,10 @@ public interface ServiciosAlquiler {
    * @throws ExcepcionXX si el identificador no corresponde con un item, o si
    * el mismo ya esta alquilado
    */
+  //ya esta
    public abstract void registrarAlquilerCliente(Date date, long docu, Item item, int numdias) throws ExcepcionServiciosAlquiler;
 
+   //ya esta
    public abstract void registrarCliente(Cliente p) throws ExcepcionServiciosAlquiler;
 
    /**
@@ -73,12 +83,16 @@ public interface ServiciosAlquiler {
    * el numeo de dias del alquiler
    * @throws ExcepcionServiciosAlquiler si el identificador del item no existe
    */
+  //diego
    public abstract long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler;
 
+   //cristian
    public abstract void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler;
 
+   //ya esta
    public abstract void registrarItem(Item i) throws ExcepcionServiciosAlquiler;
 
+   //diego
    public abstract void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler;
 
 }
