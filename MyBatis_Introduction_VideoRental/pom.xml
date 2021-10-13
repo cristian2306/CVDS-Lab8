@@ -11,10 +11,6 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
-<<<<<<< HEAD
-
-=======
->>>>>>> b8c5a59b81d9c408ef6df887a51215477504e8fe
         <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
         <dependency>
             <groupId>com.google.inject</groupId>
