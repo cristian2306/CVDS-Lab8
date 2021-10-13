@@ -62,6 +62,11 @@
     values (#{idic},#{idi},#{fechainicio},#{fechafin})
   </insert>
 
+  <insert id="insertarCliente">
+    insert into VI_CLIENTES (documento, nombre, telefono, direccion, email, vetado)
+    values (#{cliente.documento}, #{cliente.nombre}, #{cliente.telefono}, #{cliente.direccion}, #{cliente.email}, #{cliente.vetado})
+  </insert>
+
   
   <resultMap type="Cliente" id="ClienteResult">
     <id property="documento" column="documento"/>

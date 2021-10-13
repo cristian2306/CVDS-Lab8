@@ -17,12 +17,12 @@ public class MyBATISItemDAO implements ItemDAO{
 
   @Override
   public void save(Item it) throws PersistenceException{
-  try{
-      itemMapper.insertarItem(it);
-  }
-  catch(org.apache.ibatis.exceptions.PersistenceException e){
-      throw new PersistenceException("Error al registrar el item "+it.toString(),e);
-  }        
+    try{
+        itemMapper.insertarItem(it);
+    }
+    catch(org.apache.ibatis.exceptions.PersistenceException e){
+        throw new PersistenceException("Error al registrar el item "+it.toString(),e);
+    }        
 
   }
 

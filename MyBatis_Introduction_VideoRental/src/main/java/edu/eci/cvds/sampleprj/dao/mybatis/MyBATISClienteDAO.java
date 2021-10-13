@@ -10,7 +10,7 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
 import java.sql.SQLException;
 
-public class MyBATISCliente implements ItemDAO{
+public class MyBATISClienteDAO implements ClienteDAO{
 
   @Inject
   private ClienteMapper clienteMapper;    
@@ -21,21 +21,31 @@ public class MyBATISCliente implements ItemDAO{
       ClienteMapper.insertarCliente(cliente);
   }
   catch(org.apache.ibatis.exceptions.PersistenceException e){
-      throw new PersistenceException("Error al registrar el item "+it.toString(),e);
+      throw new PersistenceException("Error al registrar el cliente "+cliente.toString(),e);
   }        
 
   }
 
   @Override
   public Cliente load(int id) throws PersistenceException {
-  try{
-      return clienteMapper.consultarCliente(id);
-  }
-  catch(org.apache.ibatis.exceptions.PersistenceException e){
-      throw new PersistenceException("Error al consultar el item "+id,e);
-  }
+        try{
+            return clienteMapper.consultarCliente(id);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Error al consultar el item "+id,e);
+        }
+    }
 
 
+  @Override
+  public List<Cliente> consultarClientes() throws PersistenceException{
+        try{
+            return clienteMapper.consultarClientes();
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Error al consultar los clientes");
+        }
+
   }
+
 
   }
