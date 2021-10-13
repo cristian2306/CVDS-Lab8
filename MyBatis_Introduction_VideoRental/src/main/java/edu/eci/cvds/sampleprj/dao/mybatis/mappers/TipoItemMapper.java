@@ -15,6 +15,6 @@ public interface TipoItemMapper {
         @Param("identiTipo") int id);
     
     public void addTipoItem(
-        @Param("tipo") String tipo);
+        @Param("tipo") TipoItem tipo);
 
 }
