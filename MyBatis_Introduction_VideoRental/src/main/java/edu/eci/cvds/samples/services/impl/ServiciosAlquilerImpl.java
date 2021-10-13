@@ -14,6 +14,8 @@ import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Singleton
@@ -27,7 +29,6 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemRentadoDAO iRentadoDAO;
    @Inject
    private TipoItemDAO tItemDAO;
-
    private static final int MULTA_DIARIA=5000;
 
    @Override
@@ -35,11 +36,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        //mandar los dias de retraso y multiplicarlos por la multa diaria
        //se tiene los dias de retraso a partir de itemRentado donde está
        //la fecha de terminacion de la renta
-       try{
-           return MULTA_DIARIA *iRentadoDAO.consultarRetraso(itemId);
-       } catch (PersistenceException ex){
-           throw new UnsupportedOperationException("Not supported yet.");
-       }
+       return MULTA_DIARIA;
    }
 
    @Override
@@ -83,13 +80,33 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        try{
             return itemDAO.consultarItems();
        }catch(PersistenceException e){
-        throw new ExcepcionServiciosAlquiler("Error al consulatr los items disponibles",e);
+        throw new ExcepcionServiciosAlquiler("Error al consultar los items disponibles",e);
        }
    }
 
    @Override
-   public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+   public long consultarMultaAlquiler(int iditem, Date fechaDevolucion, long idCliente) throws ExcepcionServiciosAlquiler {
+       try{
+           consultarItem(iditem);
+           consultarCliente(idCliente);
+           ItemRentado rentado = iRentadoDAO.consultarItemRentado(idCliente, iditem);
+           LocalDate inicio = rentado.getFechainiciorenta().toLocalDate();
+           LocalDate fin = rentado.getFechafinrenta().toLocalDate();
+           LocalDate entrega = fechaDevolucion.toLocalDate();
+           //PARTE LOGICA
+            if(entrega.isBefore(inicio)){
+                throw new ExcepcionServiciosAlquiler("Día de entrega invalido");
+            }
+            else if(entrega.isBefore(fin)){
+                return 0;
+            }
+            else{
+                long retraso = ChronoUnit.DAYS.between(fin,entrega);
+                return retraso*MULTA_DIARIA;
+            }           
+       }catch(PersistenceException persistenceException){
+           throw new ExcepcionServiciosAlquiler("Error al consultar la multa de alquiler");
+       }
    }
 
    @Override
@@ -122,7 +139,11 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       Item item = consultarItem(iditem);
+       if(numdias < 0){
+           throw new ExcepcionServiciosAlquiler("Días de alquiler no válidos");
+       }
+       return item.getTarifaxDia() *numdias;
    }
 
    @Override
@@ -136,6 +157,6 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
    }
 }

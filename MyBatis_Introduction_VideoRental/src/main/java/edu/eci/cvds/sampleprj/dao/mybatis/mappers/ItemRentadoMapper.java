@@ -24,6 +24,8 @@ public interface ItemRentadoMapper{
 
     public int consultarRetraso(@Param("identificador") int id);
 
+    public ItemRentado consultarItemRentado(@Param("idCliente") long idCliente, @Param("idRentado") int idRentado);
+
  
     
 

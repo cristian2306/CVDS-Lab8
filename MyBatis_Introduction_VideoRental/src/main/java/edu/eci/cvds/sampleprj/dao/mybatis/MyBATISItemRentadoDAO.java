@@ -52,14 +52,15 @@ public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
         }
   }
 
-  @Override
-  public int consultarRetraso(int id) throws PersistenceException{
-    try{
-        return MULTA_DIARIA *iRentadoMapper.consultarRetraso(id);
-    }catch(org.apache.ibatis.exceptions.PersistenceException e){
-        throw new PersistenceException("Error al consultar la tarifa de multa");
+ @Override
+ public ItemRentado consultarItemRentado(long idCliente, int idRentado) throws PersistenceException{
+     try{
+         return iRentadoMapper.consultarItemRentado(idCliente, idRentado);
+     } catch(org.apache.ibatis.exceptions.PersistenceException e){
+        throw new PersistenceException("Error al consultar el item rentado"+idCliente);
     }
-  }
+ }
+
 
 
 }
