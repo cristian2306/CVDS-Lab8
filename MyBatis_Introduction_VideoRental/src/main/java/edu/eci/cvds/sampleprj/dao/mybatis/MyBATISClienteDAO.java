@@ -6,9 +6,12 @@ import edu.eci.cvds.sampleprj.dao.ClienteDAO;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Date;
 
 public class MyBATISClienteDAO implements ClienteDAO{
 
@@ -42,10 +45,22 @@ public class MyBATISClienteDAO implements ClienteDAO{
         try{
             return clienteMapper.consultarClientes();
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("Error al consultar los clientes");
+            throw new PersistenceException("Error al consultar los clientes",e);
         }
 
   }
 
-
+  public void registrarAlquiler(Date date, long docu, Item item, int numdias) throws PersistenceException{
+        try{
+            Calendar calendario = Calendar.getInstance();
+            calendario.setTime(date); 
+            calendario.add(calendario.DAY_OF_YEAR,numdias);
+            Date fechaFin = calendario.getTime();
+            clienteMapper.agregarItemRentadoACliente(docu, item.getId(), date, fechaFin);
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Error al registrar el alquiler",e);
+        }
   }
+
+
+}

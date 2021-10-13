@@ -80,10 +80,6 @@ public class MyBatisExample {
         //System.out.println(im.consultarItems());
         System.out.println("-----------------Consultar Item: 20000 --------------");
         //System.out.println(im.consultarItem(20000));
-
-        
-        
-        
         sqlss.commit();
         sqlss.close();
 
