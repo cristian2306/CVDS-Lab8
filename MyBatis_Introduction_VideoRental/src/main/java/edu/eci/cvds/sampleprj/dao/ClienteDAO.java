@@ -16,4 +16,5 @@ public interface ClienteDAO {
    
    public void registrarAlquiler(Date date, long docu, Item item, int numdias) throws PersistenceException ;
 
+   public void vetar(long docu, boolean estado) throws PersistenceException;
 }

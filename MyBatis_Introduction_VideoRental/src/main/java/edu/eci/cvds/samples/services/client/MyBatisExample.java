@@ -28,11 +28,18 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.session.*;
+<<<<<<< HEAD
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 //import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
+=======
+import edu.eci.cvds.sampleprj.dao.ItemRentadoDAO;
+//import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper;
+>>>>>>> 98cfeec5bf677c2ee86ecb50de8cbd51497dafb0
 
 /**
  *
@@ -69,20 +76,41 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
+<<<<<<< HEAD
         ClienteMapper cm= (ClienteMapper)sqlss.getMapper(ClienteMapper.class);
         ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
+=======
+
+        //ClienteMapper cm= (ClienteMapper)sqlss.getMapper(ClienteMapper.class);
+        //ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
+        ItemRentadoMapper ip = (ItemRentadoMapper)sqlss.getMapper(ItemRentadoMapper.class);
+>>>>>>> 98cfeec5bf677c2ee86ecb50de8cbd51497dafb0
 
         System.out.println("-----------------Consultar Clientes----------------");
        // System.out.println(cm.consultarClientes());
         System.out.println("-----------------Consultar Cliente: --------------");
-        System.out.println(cm.consultarCliente(68));
+        //System.out.println(cm.consultarCliente(68));
         System.out.println("-----------------Añadiendo itemRentado al cliente 56155 el item 1 ");
        // cm.agregarItemRentadoACliente(56155, 1, Date.valueOf("2021-09-5"), Date.valueOf("2020-10-5"));
         System.out.println("-----------------Consultar Items----------------");
         System.out.println(im.consultarItems());
         System.out.println("-----------------Consultar Item: 20000 --------------");
+<<<<<<< HEAD
         System.out.println(im.consultarItem(20000));
 
+=======
+        //System.out.println(im.consultarItem(20000));
+<<<<<<< HEAD
+        System.out.println("-----------------Consultar multa --------------");
+        System.out.println(ip.consultarItemsRentados());
+
+
+        
+        
+        
+=======
+>>>>>>> ffe86f0009098a1c032df8edb449617a104cbb69
+>>>>>>> 98cfeec5bf677c2ee86ecb50de8cbd51497dafb0
         sqlss.commit();
         sqlss.close();
 

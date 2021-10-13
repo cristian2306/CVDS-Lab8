@@ -14,4 +14,7 @@ public interface ItemRentadoDAO {
 
    public List<ItemRentado> consultarItemsCliente(long idCliente) throws PersistenceException;
 
+   public ItemRentado consultarItemRentado(long idCliente, int idRentado) throws PersistenceException;
+
+
 }
