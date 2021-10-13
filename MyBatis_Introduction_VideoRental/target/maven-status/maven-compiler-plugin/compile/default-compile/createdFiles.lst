@@ -17,7 +17,6 @@ edu\eci\cvds\sampleprj\dao\mybatis\mappers\ItemRentadoMapper.class
 edu\eci\cvds\sampleprj\dao\mybatis\MyBATISItemDAO.class
 edu\eci\cvds\samples\services\client\MyBatisExample.class
 edu\eci\cvds\samples\services\impl\ServiciosAlquilerImpl.class
-edu\eci\cvds\samples\services\impl\ServiciosAlquilerItemsImpl.class
 edu\eci\cvds\samples\entities\Item.class
 edu\eci\cvds\samples\services\ExcepcionServiciosAlquiler.class
 edu\eci\cvds\sampleprj\dao\ClienteDAO.class

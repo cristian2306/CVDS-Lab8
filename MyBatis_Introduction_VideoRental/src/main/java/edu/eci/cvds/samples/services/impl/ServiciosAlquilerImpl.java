@@ -13,6 +13,8 @@ import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
+
+import java.lang.annotation.Inherited;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
@@ -28,6 +30,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemRentadoDAO iRentadoDAO;
    @Inject
    private TipoItemDAO tItemDAO;
+
 
    @Override
    public int valorMultaRetrasoxDia(int itemId) {
