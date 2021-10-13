@@ -8,6 +8,7 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import java.sql.SQLException;
+import java.util.List;
 
 public class MyBATISClienteDAO implements ClienteDAO{
 
@@ -26,7 +27,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
   }
 
   @Override
-  public Cliente load(int id) throws PersistenceException {
+  public Cliente load(long id) throws PersistenceException {
         try{
             return clienteMapper.consultarCliente(id);
         }

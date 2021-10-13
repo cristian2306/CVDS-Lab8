@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import edu.eci.cvds.samples.entities.Item;
+import edu.eci.cvds.samples.entities.ItemRentado;
 
 /**
  *
@@ -16,7 +17,7 @@ public interface ItemRentadoMapper {
     
     public List<ItemRentado> consultarItemsRentados();        
     
-    public Item consultarItemRentado(
+    public ItemRentado consultarItemRentado(
             @Param("IdItemRentado") int id);
     
     public void insertarItemRentado(@Param("itemRentado") ItemRentado iR);
