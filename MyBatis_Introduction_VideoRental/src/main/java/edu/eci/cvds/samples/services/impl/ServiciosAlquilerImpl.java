@@ -177,6 +177,12 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
-       
+    try{
+        consultarCliente( docu );
+        clienteDAO.vetar(docu,estado);
+    }
+    catch(PersistenceException persistenceException){
+        throw new ExcepcionServiciosAlquiler("Error al vetar al cliente");
+    }
    }
 }

@@ -29,7 +29,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.session.*;
 import edu.eci.cvds.sampleprj.dao.ItemRentadoDAO;
-//import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper;
 
@@ -82,10 +82,6 @@ public class MyBatisExample {
         System.out.println("-----------------Consultar Item: 20000 --------------");
 
         System.out.println(im.consultarItem(20000));
-
-
-        System.out.println("-----------------Consultar multa --------------");
-        System.out.println(ip.consultarItemsRentados());
         sqlss.commit();
         sqlss.close();
 
