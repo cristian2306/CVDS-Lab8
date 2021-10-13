@@ -16,12 +16,9 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
 import java.lang.annotation.Inherited;
 import java.sql.Date;
-<<<<<<< HEAD
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-=======
 import java.util.Calendar;
->>>>>>> ffe86f0009098a1c032df8edb449617a104cbb69
 import java.util.List;
 
 @Singleton
