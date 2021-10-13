@@ -21,7 +21,7 @@ public interface ServiciosAlquiler {
    * identificado con 'idcliente'
    * @throws ExcepcionServiciosAlquiler si el cliente no esta registrado
    */
-   //cristian
+   //ya esta
    public abstract List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler;
 
    //ya esta
@@ -35,7 +35,7 @@ public interface ServiciosAlquiler {
    * @return el listado de items disponibles
    */
   //ya esta
-   public abstract List<Item> consultarItemsDisponibles();
+   public abstract List<Item> consultarItemsDisponibles() throws ExcepcionServiciosAlquiler;
 
    /**
    * @obj consultar el valor de la multa del alquiler, dado el id del item
@@ -50,10 +50,10 @@ public interface ServiciosAlquiler {
   //diego
    public abstract long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler;
 
-   //cristian
+   //ya esta
    public abstract TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler;
 
-   //cristian
+   //ya esta
    public abstract List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler;
 
    /**
@@ -86,7 +86,7 @@ public interface ServiciosAlquiler {
   //diego
    public abstract long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler;
 
-   //cristian
+   //ya esta
    public abstract void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler;
 
    //ya esta

@@ -47,6 +47,13 @@
                 #{item.idTipo}
                 )
     </insert>
+
+    <update id="actualizarTarifa" parameterType="map">
+        UPDATE VI_ITEMS SET
+        tarifaxdia = #{tarifa}
+        WHERE #{idItem} = id;
+    </update>
+    
     <resultMap type="Item" id="ItemResult">
         <id property="id" column="identificadorItem"/>
         <result property="nombre" column="nombreItem"/>

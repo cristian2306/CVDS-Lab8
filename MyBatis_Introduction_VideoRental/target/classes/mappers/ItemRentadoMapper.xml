@@ -5,14 +5,25 @@
   
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper">
 
-  <select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
-	SELECT 
+  <select parameterType="map" id="consultarItemsRentados" resultMap="ItemRentadoResult">
+	  SELECT 
     ir.id as id,
     ir.CLIENTES_documento as cliente,
     ir.Items_id as idItem,
     ir.fechainiciorenta as fechainiciorenta,
     ir.fechafinrenta as fechafinrenta
     FROM VI_ITEMRENTADO
+  </select>
+
+  <select parameterType="map" id="consultarItemsCliente" resultMap="ItemRentadoResult">
+	  SELECT 
+    ir.id as id,
+    ir.CLIENTES_documento as cliente,
+    ir.Items_id as idItem,
+    ir.fechainiciorenta as fechainiciorenta,
+    ir.fechafinrenta as fechafinrenta
+    FROM VI_ITEMRENTADO
+    WHERE #{idCliente}=ir.CLIENTES_documento;
   </select>
 
   <resultMap type="ItempRentado" id="ItemRentadoResult">
@@ -22,7 +33,7 @@
     <result property="fechainiciorenta" column = "fechainiciorenta"/>
     <result property="fechafinrenta" column="fechafinrenta"/>
     <association property="cliente" javaType="Cliente"/>
-    <collection property="idItem" ofType="Item" resultMap="ItemResul"></collection>
+    <collection property="idItem" ofType="Item" resultMap="ItemResult"></collection>
   </resultMap>
           	
 </mapper>

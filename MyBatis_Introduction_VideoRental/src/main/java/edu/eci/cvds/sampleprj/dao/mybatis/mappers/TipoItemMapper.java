@@ -17,4 +17,5 @@ public interface TipoItemMapper {
     public void addTipoItem(
         @Param("tipo") TipoItem tipo);
 
+    
 }

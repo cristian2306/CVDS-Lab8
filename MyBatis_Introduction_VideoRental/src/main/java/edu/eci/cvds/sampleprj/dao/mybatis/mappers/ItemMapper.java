@@ -16,9 +16,14 @@ public interface ItemMapper{
     
     public List<Item> consultarItems();        
     
-    public Item consultarItem(
-            @Param("IdentiItem") int id);
+    public Item consultarItem(@Param("IdentiItem") int id);
     
-    public void insertarItem(
-            @Param("item") Item it);        
+    public void insertarItem(@Param("item") Item it);   
+    
+    public void actualizarTarifa(@Param("idItem") int idItem,
+                                @Param("tarifa") long tarifa);
+    
+
+            
+
 }
