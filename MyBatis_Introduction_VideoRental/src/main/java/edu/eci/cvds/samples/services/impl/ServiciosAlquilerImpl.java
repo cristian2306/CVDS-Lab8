@@ -14,8 +14,12 @@ import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import java.sql.Date;
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+=======
+import java.util.Calendar;
+>>>>>>> ffe86f0009098a1c032df8edb449617a104cbb69
 import java.util.List;
 
 @Singleton
@@ -129,12 +133,20 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public void registrarAlquilerCliente(Date date, long docu, Item item, int numdias) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+            clienteDAO.registrarAlquiler(date, docu, item, numdias);
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al registrar el alquiler",e);
+       }
    }
 
    @Override
    public void registrarCliente(Cliente c) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+           clienteDAO.save(c);
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al registrar al cliente",e);
+       }
    }
 
    @Override
@@ -148,11 +160,20 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+       try{
+           itemDAO.actualizarTarifa(id, tarifa);
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al registrar al cliente",e);
+       }
    }
    @Override
    public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try{
+           itemDAO.save(i);
+       }catch(PersistenceException e){
+           throw new ExcepcionServiciosAlquiler("Error al registrar el item",e);
+       } 
+       //To change body of generated methods, choose Tools | Templates.
    }
 
    @Override

@@ -83,6 +83,7 @@ public class MyBatisExample {
         //System.out.println(im.consultarItems());
         System.out.println("-----------------Consultar Item: 20000 --------------");
         //System.out.println(im.consultarItem(20000));
+<<<<<<< HEAD
         System.out.println("-----------------Consultar multa --------------");
         System.out.println(ip.consultarItemsRentados());
 
@@ -90,6 +91,8 @@ public class MyBatisExample {
         
         
         
+=======
+>>>>>>> ffe86f0009098a1c032df8edb449617a104cbb69
         sqlss.commit();
         sqlss.close();
 
