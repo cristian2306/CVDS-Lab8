@@ -27,7 +27,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
+import org.apache.ibatis.session.*;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 
@@ -71,15 +71,15 @@ public class MyBatisExample {
         ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
 
         System.out.println("-----------------Consultar Clientes----------------");
-        System.out.println(cm.consultarClientes());
+       // System.out.println(cm.consultarClientes());
         System.out.println("-----------------Consultar Cliente: --------------");
         System.out.println(cm.consultarCliente(68));
         System.out.println("-----------------Añadiendo itemRentado al cliente 56155 el item 1 ");
-        cm.agregarItemRentadoACliente(56155, 1, Date.valueOf("2021-09-5"), Date.valueOf("2020-10-5"));
+       // cm.agregarItemRentadoACliente(56155, 1, Date.valueOf("2021-09-5"), Date.valueOf("2020-10-5"));
         System.out.println("-----------------Consultar Items----------------");
-        System.out.println(im.consultarItems());
+        //System.out.println(im.consultarItems());
         System.out.println("-----------------Consultar Item: 20000 --------------");
-        System.out.println(im.consultarItem(20000));
+        //System.out.println(im.consultarItem(20000));
 
         
         

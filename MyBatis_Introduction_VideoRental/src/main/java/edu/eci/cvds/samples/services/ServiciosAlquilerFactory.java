@@ -29,7 +29,8 @@ public class ServiciosAlquilerFactory {
                setEnvironmentId(env);
                setClassPathResource(pathResource);
                bind(ItemDAO.class).to(MyBATISItemDAO.class);
-               bind(ServiciosAlquiler.class).to(ServiciosAlquilerItemsImpl.class);
+               //ESTA LINEA ESTÁ GENERANDO UN ERROR
+               //bind(ServiciosAlquiler.class).to(ServiciosAlquilerItemsImpl.class);
            }
        });
    }
