@@ -28,18 +28,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.session.*;
-<<<<<<< HEAD
-import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
-import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
-import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
-import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper;
-import edu.eci.cvds.samples.services.ServiciosAlquiler;
-=======
 import edu.eci.cvds.sampleprj.dao.ItemRentadoDAO;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper;
->>>>>>> 12680213ca9c423893f694b4ff36763b4a5adb8b
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper;
+import edu.eci.cvds.samples.entities.Item;
+import edu.eci.cvds.samples.entities.ItemRentado;
+import edu.eci.cvds.samples.entities.TipoItem;
 
 /**
  *
@@ -76,16 +72,10 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
-<<<<<<< HEAD
-
         ClienteMapper cm= (ClienteMapper)sqlss.getMapper(ClienteMapper.class);
         ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
-        ItemRentadoMapper ip = (ItemRentadoMapper)sqlss.getMapper(ItemRentadoMapper.class);
-=======
-        ClienteMapper cm= (ClienteMapper)sqlss.getMapper(ClienteMapper.class);
-        ItemMapper im= (ItemMapper)sqlss.getMapper(ItemMapper.class);
->>>>>>> 12680213ca9c423893f694b4ff36763b4a5adb8b
-
+        ItemRentadoMapper ir = (ItemRentadoMapper)sqlss.getMapper(ItemRentadoMapper.class);
+        TipoItemMapper ti = (TipoItemMapper)sqlss.getMapper(TipoItemMapper.class);
         System.out.println("-----------------Consultar Clientes----------------");
        // System.out.println(cm.consultarClientes());
         System.out.println("-----------------Consultar Cliente: --------------");
@@ -95,16 +85,15 @@ public class MyBatisExample {
         System.out.println("-----------------Consultar Items----------------");
         System.out.println(im.consultarItems());
         System.out.println("-----------------Consultar Item: 20000 --------------");
-
+        System.out.println("----------------Consultar Item Rentados de Cliente 68 ");
+        System.out.println("-----------------Consultar Items Rentados ---------------------------");
+        System.out.print(ir.consultarItemsRentados());
+        System.out.println(ir.consultarItemsCliente(68));
         System.out.println(im.consultarItem(20000));
-<<<<<<< HEAD
-
-        //System.out.println(im.consultarItem(20000));
-
-        System.out.println("-----------------Consultar multa --------------");
-        System.out.println(ip.consultarItemsRentados());
-=======
->>>>>>> 12680213ca9c423893f694b4ff36763b4a5adb8b
+        System.out.println("-------------------Consultar TipoItems-------------------");
+        System.out.print(ti.getTiposItems());
+        System.out.println("--------------------Consulatr TipoItem-------------------");
+        //System.out.println(ti.getTipoItem());
         sqlss.commit();
         sqlss.close();
 

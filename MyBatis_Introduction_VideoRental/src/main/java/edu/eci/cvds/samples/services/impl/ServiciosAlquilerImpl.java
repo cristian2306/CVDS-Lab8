@@ -13,15 +13,13 @@ import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
+import org.mybatis.guice.transactional.Transactional;
 
 import java.lang.annotation.Inherited;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-<<<<<<< HEAD
 import java.util.Calendar;
-=======
->>>>>>> 12680213ca9c423893f694b4ff36763b4a5adb8b
 import java.util.List;
 
 @Singleton
@@ -40,9 +38,6 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public int valorMultaRetrasoxDia(int itemId) {
-       //mandar los dias de retraso y multiplicarlos por la multa diaria
-       //se tiene los dias de retraso a partir de itemRentado donde está
-       //la fecha de terminacion de la renta
        return MULTA_DIARIA;
    }
 
@@ -134,6 +129,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        }
    }
 
+   @Transactional
    @Override
    public void registrarAlquilerCliente(Date date, long docu, Item item, int numdias) throws ExcepcionServiciosAlquiler {
        try{
@@ -143,6 +139,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        }
    }
 
+   @Transactional
    @Override
    public void registrarCliente(Cliente c) throws ExcepcionServiciosAlquiler {
        try{
@@ -161,6 +158,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        return item.getTarifaxDia() *numdias;
    }
 
+   @Transactional
    @Override
    public void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler {
        try{
@@ -169,6 +167,8 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
            throw new ExcepcionServiciosAlquiler("Error al registrar al cliente",e);
        }
    }
+
+   @Transactional
    @Override
    public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
        try{
@@ -179,6 +179,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
        //To change body of generated methods, choose Tools | Templates.
    }
 
+   @Transactional
    @Override
    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
     try{

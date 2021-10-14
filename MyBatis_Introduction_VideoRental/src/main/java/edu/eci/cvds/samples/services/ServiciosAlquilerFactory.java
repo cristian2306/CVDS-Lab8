@@ -35,7 +35,7 @@ public class ServiciosAlquilerFactory {
                bind(TipoItemDAO.class).to(MyBATISTipoItemDAO.class);
                bind(ItemRentadoDAO.class).to(MyBATISItemRentadoDAO.class);
                //ESTA LINEA ESTÁ GENERANDO UN ERROR
-               bind(ServiciosAlquiler.class).to(edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl.class);
+               bind(ServiciosAlquiler.class).to(ServiciosAlquilerImpl.class);
            }
        });
    }
@@ -65,5 +65,12 @@ public class ServiciosAlquilerFactory {
    public static ServiciosAlquilerFactory getInstance(){
        return instance;
    }
+
+   public static void main(String[] args) throws ExcepcionServiciosAlquiler {
+        instance.getServiciosAlquiler();
+        /*System.out.println(instance.getServiciosAlquiler().consultarClientes().toString());
+
+        System.out.println(instance.getServiciosAlquiler().consultarCliente(-706).toString());*/
+}
 
 }

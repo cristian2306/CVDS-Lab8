@@ -9,14 +9,14 @@
     SELECT 
     ti.id as idTipoItem,
     ti.descripcion as descripcionTipoItem
-    FROM VI_TIPOITEM
+    FROM VI_TIPOITEM ti
   </select>
 
   <select parameterType="map" id="getTipoItem" resultMap="TipoItemResult">
     SELECT 
     ti.id as idTipoItem,
     ti.descripcion as descripcionTipoItem
-    FROM VI_TIPOITEM
+    FROM VI_TIPOITEM ti
     WHERE #{identiTipo} = ti.id;
   </select>
 
@@ -26,8 +26,8 @@
   </insert>
 
   <resultMap type="TipoItem" id="TipoItemResult">
-    <id property="idTipoItem" column="idTIpoItem"/>
-    <result property="descripcionTipoItem" column="descripcionTipoItem"/>
+    <id property="id" column="idTIpoItem"/>
+    <result property="descripcion" column="descripcionTipoItem"/>
   </resultMap>      
 
 </mapper>
